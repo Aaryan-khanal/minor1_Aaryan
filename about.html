@@ -1,0 +1,175 @@
+<style>
+    :root {
+      --bg-light: #ffffff;
+      --text-light: #000000;
+      --bg-dark: #1a1a1a;
+      --text-dark: #f0f0f0;
+      --primary: #4a90e2;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--bg-light);
+      color: var(--text-light);
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    body.dark {
+      background-color: var(--bg-dark);
+      color: var(--text-dark);
+    }
+
+    header {
+      background: linear-gradient(45deg, var(--primary), #357ABD);
+      color: white;
+      padding: 30px 20px;
+      text-align: center;
+      font-size: 2rem;
+      font-weight: 700;
+    }
+
+    body.dark header {
+      background: linear-gradient(45deg, #222, #333);
+    }
+
+    nav {
+      background-color: var(--primary);
+      padding: 15px 10px;
+      text-align: center;
+    }
+
+    body.dark nav {
+      background-color: #111;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 15px;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    body.dark nav a {
+      color: #ccc;
+    }
+
+    #themeToggle {
+      font-size: 1.5rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+      margin-left: 10px;
+    }
+
+    main {
+      flex: 1;
+      max-width: 900px;
+      margin: 40px auto 60px;
+      padding: 0 20px;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 15px;
+      border-bottom: 3px solid;
+      padding-bottom: 8px;
+    }
+
+    .map-container img {
+      width: 100%;
+      max-width: 400px;
+      border-radius: 10px;
+    }
+
+    footer {
+      background-color: var(--primary);
+      color: white;
+      text-align: center;
+      padding: 15px 10px;
+    }
+
+    body.dark footer {
+      background-color: #111;
+      color: #ccc;
+    }
+    .nav-links a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+     
+  <header>Carmandu</header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html" aria-current="page">About Us</a>
+    <a href="contact.html">Contact Us</a>
+    <a href="login.html">Login</a>
+    <button id="themeToggle">🌙</button>
+  </nav>
+
+
+    <main>
+        <section class="section">
+            <h2>Carmandu</h2>
+            <p>
+                At CarMandu, we pride ourselves on delivering an exceptional automotive experience, featuring the world's most luxurious and exclusive vehicles. From sleek sports cars to elegant sedans, our curated collection includes brands like Ferrari, Lamborghini, and Mercedes-Benz.
+            </p>
+        </section>
+
+        <section class="section">
+            <h2>Our Mission</h2>
+            <p>
+                Our mission is to connect passionate drivers with their dream cars, providing unparalleled customer service and expert knowledge. We strive to create a showroom environment that inspires and excites every visitor.
+            </p>
+        </section>
+
+        <section class="section">
+            <h2>Our Vision</h2>
+            <p>
+                We envision a future where CarMandu is the go-to destination for automotive excellence, innovation, and trust. We aim to expand our offerings while maintaining our commitment to quality and customer satisfaction.
+            </p>
+        </section>
+
+        <section class="section">
+            <h2>Meet Our Team</h2>
+            <p>
+                Our dedicated team of automotive experts, sales professionals, and customer support staff are here to guide you through every step of your car buying journey. With passion and expertise, we ensure a seamless and enjoyable experience.
+            </p>
+        </section>
+
+        <section class="map-container">
+      <h2>Visit Us</h2>
+      <img src="ChatGPT Image Jul 24, 2025, 10_42_04 PM.png" alt="Map">
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 Carmandu. All rights reserved.
+  </footer>
+
+  <script>
+    const toggle = document.getElementById('themeToggle');
+    const saved = localStorage.getItem('theme');
+    if (saved === 'dark') {
+      document.body.classList.add('dark');
+      toggle.textContent = '☀️';
+    }
+    toggle.addEventListener('click', () => {
+      document.body.classList.toggle('dark');
+      const isDark = document.body.classList.contains('dark');
+      toggle.textContent = isDark ? '☀️' : '🌙';
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    });
+  </script>
+</body>
+</html>
+
+    
+</body>
+</html>

@@ -1,0 +1,177 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #ffffff;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+body > header, body > nav, body > footer {
+    width: 100%;
+}
+
+header {
+    background: linear-gradient(45deg, #4a90e2, #357ABD);
+    color: white;
+    padding: 20px;
+    text-align: center;
+    animation: fadeInDown 1s ease;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+nav {
+    background-color:  #4a90e2;
+    padding: 15px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color:  #4a90e2;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+h1 {
+    color:  white;
+    text-align: center;
+    margin-top: 20px;
+    animation: fadeIn 1s ease;
+}
+
+.cars {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    animation: fadeInUp 1s ease;
+    flex-grow: 1;
+}
+
+
+
+.cars {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    grid-template-rows: repeat(3, auto);  /* 3 rows */
+    gap: 50px;                            /* space between cars */
+    padding: 60px 60px;
+    justify-content: center;
+    animation: fadeInUp 1s ease;
+
+    max-height: calc(3 * 300px + 2 * 50px); /* approximate height to fit 3 rows + gaps */
+    overflow-y: auto;  /* scroll vertically if more than 9 cars */
+}
+
+
+.car:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(255, 111, 97, 0.5);
+}
+
+form {
+    width: 90%;
+    max-width: 350px;
+    margin: auto;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px solid  #4a90e2;
+    animation: fadeIn 1s ease;
+}
+
+input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid  #4a90e2;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+input[type="submit"] {
+    background-color: #000000;
+    color: white;
+    padding: 10px;
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #000000;
+}
+
+footer {
+    background-color:  #4a90e2;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .cars {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav a {
+        display: inline-block;
+        margin: 10px 5px;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    .car {
+        width: 90%;
+    }
+}
