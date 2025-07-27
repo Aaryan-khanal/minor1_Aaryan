@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 3 - System Analysis, Design, and Implementation</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', serif;
+            font-size: 12pt;
+            line-height: 1.6;
+            margin: 40px;
+            color: black;
+        }
+        h1, h2 {
+            font-weight: bold;
+        }
+        .diagram-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .flowchart {
+            display: inline-block;
+            text-align: center;
+            margin: 20px 0;
+        }
+        .box {
+            background-color: #D2691E;
+            border: 2px solid #8B4513;
+            border-radius: 8px;
+            padding: 10px;
+            margin: 10px;
+            display: inline-block;
+            min-width: 150px;
+            font-family: 'Times New Roman', serif;
+            font-size: 10pt;
+            color: black;
+        }
+        .decision-box {
+            background-color: #FF69B4;
+            border: 2px solid #FF1493;
+            border-radius: 50px;
+            padding: 10px;
+            margin: 10px;
+            display: inline-block;
+            min-width: 150px;
+            font-family: 'Times New Roman', serif;
+            font-size: 10pt;
+            color: black;
+        }
+        .arrow {
+            font-size: 20px;
+            margin: 10px;
+        }
+        .wireframe {
+            border: 3px solid black;
+            margin: 20px auto;
+            padding: 20px;
+            max-width: 800px;
+            background-color: white;
+            page-break-before: always;
+        }
+        .desktop-wireframe {
+            width: 700px;
+            height: 500px;
+            margin-bottom: 50px;
+        }
+        .mobile-wireframe {
+            width: 300px;
+            height: 600px;
+            margin-top: 50px;
+            page-break-before: always;
+        }
+        .nav-bar {
+            border: 2px solid black;
+            padding: 10px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .nav-item {
+            border: 1px solid black;
+            padding: 5px 10px;
+            font-size: 10pt;
+        }
+        .main-section {
+            border: 2px solid black;
+            padding: 20px;
+            margin: 10px 0;
+            text-align: center;
+        }
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 10px;
+            margin: 20px 0;
+        }
+        .product-item {
+            border: 1px solid black;
+            padding: 20px;
+            text-align: center;
+            font-size: 10pt;
+        }
+        .mobile-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 10px;
+        }
+        .hamburger {
+            display: inline-block;
+            width: 30px;
+            height: 20px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h1>CHAPTER 3</h1>
+    <h1>SYSTEM ANALYSIS, DESIGN, AND IMPLEMENTATION</h1>
+
+    <h2>3.1 System Design</h2>
+    <p>The design phase involved creating a modern, responsive e-commerce platform for Carmandu to showcase various automotive products and car brands. Wireframes and user flow diagrams were developed to outline the comprehensive design of the homepage with hero section, product catalogue, about section, contact forms, and shopping cart functionality. This analysis included examining the visual hierarchy, responsive navigation flow, and key user interactions across multiple device types to ensure a seamless user experience from mobile phones to desktop computers.</p>
+
+    <p>The wireframes provided a visual blueprint of the website's responsive layout and functionality. For the homepage, the wireframe included a responsive header with the company logo, hamburger navigation menu for mobile devices, search functionality, and dark mode toggle. The main hero section featured a compelling call-to-action with background imagery showcasing automotive excellence. Below this, the about section presented company information alongside car imagery, followed by a comprehensive product catalogue displaying various car brands in a responsive grid layout that adapts from 5 columns on desktop to 1 column on mobile devices. The contact section included multiple communication options with forms, phone, email, and location information, ensuring customers could easily connect with the business.</p>
+
+    <p>The user flow diagram detailed the steps users take to navigate through the responsive website. Users typically start at the homepage hero section, where they can choose to explore products, learn about the company, or contact directly. From the homepage, users can scroll to the product catalog or use the navigation menu to jump to specific sections. The responsive design ensures that mobile users have access to all functionality through the hamburger menu. Selecting a product takes users to detailed product pages with purchasing options, while the shopping cart functionality allows for complete e-commerce interactions.</p>
+
+    <h2>3.2 User Flow Diagram</h2>
+    <p>A user flow diagram for the Carmandu website illustrates the journey a user takes from entry to accomplishing their goals on the responsive platform. The diagram shows multiple entry points and interaction paths across different device types.</p>
+
+    <div class="diagram-container">
+        <div class="flowchart">
+            <div class="box">
+                <strong>HOMEPAGE</strong><br>
+                User starts on the Home Page to list, tag, up, or browse car products
+            </div>
+            <div class="arrow">▼</div>
+            
+            <div style="display: flex; justify-content: center; gap: 20px;">
+                <div class="box">
+                    <strong>LOGIN/SIGNUP</strong><br>
+                    Clicking Login/Signup option takes to user authentication page
+                </div>
+                <div class="box">
+                    <strong>BROWSE PRODUCTS</strong><br>
+                    Users can browse the products without logging in
+                </div>
+                <div class="box">
+                    <strong>DARK MODE TOGGLE</strong><br>
+                    Theme switching with dark/light theme functionality
+                </div>
+            </div>
+            
+            <div class="arrow">▼</div>
+            
+            <div class="box">
+                <strong>USER ENTERS CREDENTIALS</strong><br>
+                User provides email/username and password for authentication
+            </div>
+            
+            <div class="arrow">▼</div>
+            
+            <div class="decision-box">
+                <strong>CREDENTIALS MATCHED?</strong><br>
+                System validates user credentials against existing user database
+            </div>
+            
+            <div class="arrow">▼</div>
+            
+            <div style="display: flex; justify-content: center; gap: 20px;">
+                <div class="box">
+                    <strong>ABOUT SECTION</strong><br>
+                    User can navigate to learn about company story
+                </div>
+                <div class="box">
+                    <strong>PRODUCT GRID</strong><br>
+                    24+ car brands to responsive layout (5x5 to 1x24)
+                </div>
+                <div class="box">
+                    <strong>CONTACT FORM</strong><br>
+                    Multi-option communication channels
+                </div>
+            </div>
+            
+            <div class="arrow">▼</div>
+            
+            <div style="display: flex; justify-content: center; gap: 20px;">
+                <div class="box">
+                    <strong>LEARN MORE</strong><br>
+                    Expanded links for more car information
+                </div>
+                <div class="box">
+                    <strong>PRODUCT HOVER</strong><br>
+                    Interactive product information display
+                </div>
+                <div class="box">
+                    <strong>SHOPPING CART</strong><br>
+                    Add items/merchandise for car product management
+                </div>
+            </div>
+            
+            <div class="arrow">▼</div>
+            
+            <div class="box">
+                <strong>PRODUCT PURCHASE</strong><br>
+                Complete checkout process with product details and final car options
+            </div>
+        </div>
+        
+        <p><em>Figure 1: User Flow Diagram</em></p>
+    </div>
+
+    <h2>3.3 Wire Framing</h2>
+    <p>A wireframe for the Carmandu website outlines the basic design of its homepage, product catalogue, user authentication, and contact sections across desktop and mobile platforms. The wireframes demonstrate the structural layout for an automotive e-commerce platform.</p>
+
+    <p><strong>Homepage Design:</strong> Features automotive excellence story, company branding, and navigation menu with the welcome message "Discover Your Perfect Ride – Premium Cars and Automotive Excellence."</p>
+
+    <p><strong>Product Listings:</strong> Grid-based layouts displaying car brands (Audi, BMW, Ferrari, Lamborghini, Mercedes, Porsche, Tesla, Bugatti, Rolls Royce) and automotive categories. Additional products include car accessories, parts, and automotive merchandise.</p>
+
+    <p><strong>User Authentication:</strong> Login buttons, user account access, dark mode toggle, and search functionality for personalized browsing experiences.</p>
+
+    <p><strong>Responsive Design:</strong> Desktop features horizontal navigation with 5-column product grids. Mobile transforms to hamburger menu navigation with single-column listings, maintaining functionality while optimizing touch interactions.</p>
+
+    <div class="diagram-container">
+        <div class="wireframe desktop-wireframe">
+            <h3 style="text-align: center; margin-bottom: 20px;">Desktop Prototype</h3>
+            
+            <div class="nav-bar">
+                <div class="nav-item">LOGO</div>
+                <div class="nav-item">HOME</div>
+                <div class="nav-item">ABOUT</div>
+                <div class="nav-item">PRODUCTS</div>
+                <div class="nav-item">USER LOGIN</div>
+                <div class="nav-item">CONTACT</div>
+                <div class="nav-item">CART</div>
+                <div class="nav-item">🔍 Search For</div>
+                <div class="nav-item">LOGIN</div>
+            </div>
+            
+            <div class="main-section">
+                <h2>HOME PAGE</h2>
+                <p>"Welcome to Carmandu"</p>
+                <p>Premium Automotive Review</p>
+            </div>
+            
+            <div style="display: flex; gap: 20px; margin: 20px 0;">
+                <div class="main-section" style="flex: 1;">
+                    <h3>ABOUT TEXT</h3>
+                    <p>Company heritage and fine sourcing story</p>
+                    <p>Learn More Button</p>
+                </div>
+                <div class="main-section" style="flex: 1;">
+                    <h3>CAR IMAGE</h3>
+                    <p>Automotive heritage visuals</p>
+                </div>
+            </div>
+            
+            <div class="product-grid">
+                <div class="product-item">AUDI</div>
+                <div class="product-item">BMW</div>
+                <div class="product-item">FERRARI</div>
+                <div class="product-item">TESLA</div>
+                <div class="product-item">MERCEDES</div>
+            </div>
+            
+            <div class="main-section">
+                <p>CONTACT SECTION - [Phone] [Email] [Location] [Contact Form]</p>
+            </div>
+        </div>
+        
+        <p><em>Figure 2: Desktop Prototype Wireframe</em></p>
+    </div>
+
+    <div style="page-break-before: always;"></div>
+
+    <div class="diagram-container">
+        <div class="wireframe mobile-wireframe">
+            <h3 style="text-align: center; margin-bottom: 20px;">Phone Prototype</h3>
+            
+            <div class="nav-bar" style="justify-content: space-between;">
+                <div class="hamburger">☰</div>
+                <div class="nav-item">CARMANDU</div>
+                <div style="display: flex; gap: 5px;">
+                    <div class="nav-item" style="font-size: 8pt;">🔍</div>
+                    <div class="nav-item" style="font-size: 8pt;">LOGIN</div>
+                </div>
+            </div>
+            
+            <div class="main-section">
+                <h3>HOME PAGE</h3>
+                <p>"Welcome to Carmandu"</p>
+                <p>[Explore]</p>
+            </div>
+            
+            <div class="main-section">
+                <h3>ABOUT TEXT</h3>
+                <p>[Learn More Button]</p>
+            </div>
+            
+            <div class="main-section">
+                <h3>CAR IMAGE</h3>
+                <p>Automotive heritage visuals</p>
+            </div>
+            
+            <div class="main-section">
+                <div class="mobile-grid">
+                    <div class="nav-item">[Product 1] Audi Cars - Rs 5500</div>
+                    <div class="nav-item">[Product 2] BMW Cars - Rs 4800</div>
+                    <div class="nav-item">[Product 3] Ferrari Cars - Rs 7200</div>
+                </div>
+                <p style="margin-top: 10px;">...more products</p>
+            </div>
+            
+            <div class="main-section">
+                <p>CONTACT [Form]</p>
+            </div>
+        </div>
+        
+        
+    </div>
+
+    <h2>3.4 System Description</h2>
+    <p>The system consists of HTML5, CSS3, and JavaScript files that together create a fully responsive frontend for Carmandu website. HTML5 was employed to structure the semantic content, providing accessibility-friendly markup and proper document structure for the web pages. CSS3 was utilized extensively for responsive styling, implementing six media query breakpoints (360px to 1400px+) to ensure optimal display across all device types. The CSS includes advanced features such as CSS Grid for product layouts, Flexbox for flexible components, smooth transitions, and dark mode styling.</p>
+
+    <p>JavaScript was integrated to add comprehensive interactivity, enabling dynamic features such as hamburger menu functionality with overlay system, dark mode toggle with localStorage persistence, shopping cart operations, search functionality with real-time filtering, and smooth scrolling navigation. The system architecture follows modern responsive design principles with mobile-first approach, ensuring excellent performance on smartphones while scaling up to desktop displays.</p>
+
+    <p>The file structure includes the main homepage (index.html), comprehensive styling (style.css), interactive functionality (script.js), shopping interface, product detail pages for individual car brands (audi.html, bmw.html, ferrari.html, tesla.html, mercedes.html, etc.), and authentication system (login.html with associated CSS and JS files). Additionally, the project includes organized image assets with car logos, product images, backgrounds, and decorative elements. This combination of technologies ensures a cohesive, responsive, and engaging user experience that effectively promotes automotive products through modern web standards.</p>
+
+</body>
+</html>

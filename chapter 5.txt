@@ -1,0 +1,32 @@
+# CHAPTER 5
+SUMMARY
+
+## 5.1 Conclusion
+
+This project successfully achieved its objective of creating a comprehensive Carmandu website that showcases various automotive products and car brands. The development process provided valuable hands-on experience in frontend web development and significantly enhanced understanding of HTML, CSS, and JavaScript integration. The website effectively demonstrates the diversity of the automotive industry through an intuitive user interface that combines modern car technology with contemporary web design.
+
+Key achievements include the successful implementation of a multi-page website structure with seamless navigation, a functional shopping cart system for automotive products, secure user authentication with domain-specific validation, and responsive design elements. The project successfully integrates automotive branding with practical e-commerce functionality, creating a platform that both educates users about various car brands and provides an engaging browsing experience.
+
+## 5.2 Limitations
+
+The current implementation focuses primarily on frontend functionality and does not include backend processing or database integration. The shopping cart system operates locally without persistent storage or payment gateway integration. Additionally, the responsive design requires further optimization for very small screen sizes (below 320px) as identified during testing.
+
+Other limitations include:
+• No real-time inventory management system for automotive products
+• Limited search functionality that currently provides visual feedback only
+• Absence of user registration system beyond the current authentication
+• No integration with actual car dealers or shipping services
+• Static product information without dynamic pricing or availability updates
+
+## 5.3 Future Enhancements/Recommendations
+
+Future development could focus on expanding the website's functionality and improving user experience through several key enhancements. Implementing a complete backend system with database integration would enable persistent user accounts, order history, and real-time inventory management for automotive products.
+
+Additional recommendations include:
+• Integration with car dealer APIs for real-time pricing and availability
+• Advanced search and filter functionality for car specifications
+• User review and rating system for vehicles
+• Virtual car viewing and 360-degree product images
+• Integration with financing and insurance services
+• Mobile app development for enhanced user accessibility
+• Implementation of AI-powered car recommendation system

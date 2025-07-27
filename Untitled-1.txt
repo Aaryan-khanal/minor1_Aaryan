@@ -1,0 +1,31 @@
+    
+# Chapter 1: Introduction
+
+## 1.1 Background
+
+Carmandu is an online platform designed to showcase and promote a wide range of cars and automotive products. The website features various car brands, models, and related information, helping users discover vehicles that match their preferences and needs. Carmandu aims to provide valuable insights into car features, specifications, and the latest trends in the automotive industry, supporting both enthusiasts and potential buyers in making informed decisions.
+
+## 1.2 Scope
+
+This project focuses on developing a fully responsive frontend website for Carmandu. The scope includes user interface design and interactive client-side functionality using modern web technologies. Backend features such as database integration and payment processing are not included in this frontend-only implementation.
+
+## 1.3 Project Description
+
+The Carmandu website is a modern, responsive platform built from scratch. Key components include:
+- A homepage with a hero section
+- A comprehensive catalogue displaying various car models
+- An about section with company information
+- Contact forms for user inquiries
+- Shopping cart functionality
+- Responsive login/registration system
+- Mobile-optimized navigation
+
+The website is developed using HTML5 for structure, CSS3 for responsive design, and vanilla JavaScript for interactive features, ensuring accessibility and usability across devices.
+
+## 1.4 Objectives
+
+- Create a responsive website for Carmandu using HTML, CSS, and JavaScript
+- Design a user-friendly interface for mobile, tablet, and desktop
+- Build an interactive car catalogue with shopping cart functionality
+- Implement features like hamburger menu and dark mode toggle
+- Develop frontend web development and responsive design skills

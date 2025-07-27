@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 4 - System Testing, Debugging, and Results</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', serif;
+            font-size: 12pt;
+            line-height: 1.6;
+            margin: 40px;
+            color: black;
+        }
+        h1, h2 {
+            font-weight: bold;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-family: 'Times New Roman', serif;
+            font-size: 12pt;
+            color: black;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 12px;
+            text-align: left;
+            vertical-align: top;
+        }
+        th {
+            background-color: #f0f0f0;
+            font-weight: bold;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+        li {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>CHAPTER 4</h1>
+    <h1>SYSTEM TESTING, DEBUGGING, AND RESULTS</h1>
+
+    <h2>4.1 Testing</h2>
+    
+    <p><strong>Table 1: Testing</strong></p>
+    <table>
+        <thead>
+            <tr>
+                <th>Test Area</th>
+                <th>Test Method</th>
+                <th>Expected Result</th>
+                <th>Actual Result</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Homepage Layout</td>
+                <td>Manual Inspection</td>
+                <td>Elements are correctly positioned and styled.</td>
+                <td>Elements are aligned and styled correctly.</td>
+                <td>Passed</td>
+            </tr>
+            <tr>
+                <td>Navigation Menu</td>
+                <td>Manual Clicking</td>
+                <td>Links navigate to correct car brand pages</td>
+                <td>Links navigate as expected to individual car pages.</td>
+                <td>Passed</td>
+            </tr>
+            <tr>
+                <td>Responsive Design</td>
+                <td>Resizing browser window</td>
+                <td>Layouts adjust correctly for various screen sizes.</td>
+                <td>Issues faced on small screen sizes for car grid layout</td>
+                <td>Needs Improvement</td>
+            </tr>
+            <tr>
+                <td>Form Validation</td>
+                <td>Input valid and invalid data</td>
+                <td>Form displays appropriate error messages</td>
+                <td>Error messages are displayed correctly</td>
+                <td>Passed</td>
+            </tr>
+            <tr>
+                <td>Shopping Cart</td>
+                <td>Add/Remove Products</td>
+                <td>Cart updates with correct car items and pricing</td>
+                <td>Cart functionality works as expected for automotive products</td>
+                <td>Passed</td>
+            </tr>
+            <tr>
+                <td>Dark Mode Toggle</td>
+                <td>UI Testing</td>
+                <td>Theme switches between light and dark modes</td>
+                <td>Dark mode applies correctly to all automotive elements</td>
+                <td>Passed</td>
+            </tr>
+            <tr>
+                <td>Login Authentication</td>
+                <td>Email Domain Validation</td>
+                <td>Only @carmandu.com emails accepted</td>
+                <td>Domain validation works correctly</td>
+                <td>Passed</td>
+            </tr>
+            <tr>
+                <td>Car Brand Pages</td>
+                <td>Manual Navigation</td>
+                <td>Individual car brand pages load with correct content</td>
+                <td>All car brand pages (Audi, BMW, Ferrari, etc.) load properly</td>
+                <td>Passed</td>
+            </tr>
+            <tr>
+                <td>Search Functionality</td>
+                <td>Keyword Input Testing</td>
+                <td>Search returns relevant automotive results</td>
+                <td>Search provides visual feedback and filters car brands</td>
+                <td>Passed</td>
+            </tr>
+            <tr>
+                <td>Contact Form</td>
+                <td>Form Submission</td>
+                <td>Contact form accepts and validates user input</td>
+                <td>Form validation works for all required fields</td>
+                <td>Passed</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p>The Carmandu website was tested on various web browsers to ensure compatibility. Functionality tests were conducted to check the interactivity features implemented using JavaScript, ensuring they performed consistently across different browsers and devices. These tests verified that user interactions such as form validations, dynamic content loading, car brand navigation, and responsive design adjustments functioned as expected across platforms, providing a seamless experience for all users accessing the Carmandu automotive website.</p>
+
+    <h2>4.2 Debugging</h2>
+    <p>Several issues were encountered during development, including layout discrepancies and JavaScript errors. These challenges were addressed through iterative testing and debugging processes. Key issues resolved included:</p>
+
+    <ul>
+        <li><strong>Navigation Menu Responsiveness:</strong> Fixed hamburger menu toggle functionality for mobile devices by implementing proper event listeners in script.js</li>
+        <li><strong>Form Validation Logic:</strong> Enhanced email domain validation in login system to ensure only @carmandu.com addresses are accepted</li>
+        <li><strong>Shopping Cart Calculations:</strong> Resolved price calculation errors to ensure accurate total updates when automotive items are added or removed</li>
+        <li><strong>CSS Layout Issues:</strong> Adjusted responsive breakpoints and grid layouts to improve car brand display on smaller screen sizes</li>
+        <li><strong>Image Loading Problems:</strong> Standardized image paths and verified all car brand logos and product images load correctly</li>
+        <li><strong>Car Brand Page Links:</strong> Fixed navigation issues between individual car brand pages (audi.html, bmw.html, ferrari.html, etc.)</li>
+        <li><strong>Dark Mode Implementation:</strong> Resolved CSS conflicts to ensure dark mode applies consistently across all car brand pages</li>
+    </ul>
+
+    <p>This iterative approach not only improved the overall stability and performance of the website but also enhanced the user experience by eliminating potential obstacles and ensuring a seamless interaction with the automotive showcase site.</p>
+
+    <h2>4.3 Results</h2>
+    <p>The final product is a functional Carmandu website that successfully showcases various automotive products and car brands. The visual design closely mirrors professional automotive e-commerce standards while maintaining consistency in layout, colour schemes, and typography that reflects modern automotive excellence. This achievement reflects the successful implementation of HTML, CSS, and JavaScript to create key functionalities and visual elements, providing users with an intuitive and engaging interface when accessing the Carmandu automotive website.</p>
+
+    <p><strong>Key accomplishments include:</strong></p>
+    <ul>
+        <li><strong>Multi-page Navigation:</strong> Seamless navigation between homepage (index.html), individual car brand pages (audi.html, bmw.html, ferrari.html, tesla.html, mercedes.html, etc.), and login page</li>
+        <li><strong>Automotive Showcase:</strong> Comprehensive display of car brands including Audi, BMW, Ferrari, Lamborghini, Mercedes, Porsche, Tesla, Bugatti, and Rolls Royce with detailed information</li>
+        <li><strong>Interactive Shopping Cart:</strong> Fully functional cart system with add-to-cart, quantity management, and real-time price calculations for automotive products</li>
+        <li><strong>User Authentication:</strong> Secure login system with domain-specific email validation (@carmandu.com) and password verification</li>
+        <li><strong>Responsive Design:</strong> Mobile-friendly layout with hamburger menu implementation for smaller screens across all car brand pages</li>
+        <li><strong>Dark Mode Feature:</strong> Complete theme switching capability with user preference storage across the entire automotive website</li>
+        <li><strong>Automotive Branding:</strong> Professional representation of the automotive industry through visual design and car brand presentation</li>
+        <li><strong>Search and Filter:</strong> Dynamic search functionality for finding specific car brands and automotive products</li>
+        <li><strong>Contact Integration:</strong> Multiple communication channels for customer inquiries and automotive consultation</li>
+    </ul>
+
+    <p>The website successfully demonstrates practical web development skills while serving as an effective digital platform that showcases and promotes various automotive brands and products, creating an engaging user experience for car enthusiasts and potential buyers.</p>
+
+</body>
+</html>

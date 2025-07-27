@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Audi - CARMANDU</title>
+  <style id="theme-style">
+    body.dark {
+      background-color: #1a1a1a;
+      color: #f0f0f0;
+    }
+    body.dark header {
+      background: linear-gradient(45deg, #222, #333);
+    }
+    body.dark nav {
+      background-color: #111;
+    }
+    body.dark nav a {
+      color: #ccc;
+    }
+    body.dark nav a:hover,
+    body.dark nav a[aria-current="page"] {
+      color: #fff;
+    }
+    body.dark .car-detail {
+      background-color: #2a2a2a;
+      box-shadow: 0 3px 8px rgba(255, 255, 255, 0.1);
+    }
+    body.dark .car-detail h2,
+    body.dark .car-detail h3 {
+      color: #80bfff;
+    }
+    body.dark footer {
+      background-color: #111;
+      color: #ccc;
+    }
+    body.dark footer a {
+      color: #ccc;
+    }
+    body.dark hr {
+      border-top: 1px solid #444;
+    }
+    body.dark .book-btn {
+      background: linear-gradient(45deg, #4a90e2, #357ABD);
+    }
+    body.dark .modal {
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+    body.dark .modal-content {
+      background-color: #2a2a2a;
+      color: #f0f0f0;
+    }
+
+    body.dark input,
+    body.dark textarea {
+      background-color: #333;
+      color: #f0f0f0;
+      border: 1px solid #555;
+    }
+
+    body.dark input:focus,
+    body.dark textarea:focus {
+      border-color: #4a90e2;
+      outline: none;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f7fa;
+      color: #333;
+    }
+
+    header {
+      background: linear-gradient(45deg, #4a90e2, #357ABD);
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    header img {
+      height: 60px;
+      max-width: 100%;
+    }
+
+    header h1 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin: 0;
+    }
+
+    nav {
+      background-color: #4a90e2;
+      padding: 10px 20px;
+      text-align: center;
+    }
+    .nav-links a:hover {
+      text-decoration: underline;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: #ffffff;
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 1.1rem;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover,
+    nav a[aria-current="page"] {
+      color: #ffffff;
+    }
+
+    #themeToggle {
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      font-size: 1.5rem;
+      transition: transform 0.3s ease;
+    }
+
+    #themeToggle:hover {
+      transform: rotate(20deg) scale(1.1);
+    }
+
+    .hamburger {
+      display: none;
+      font-size: 1.8rem;
+      background: none;
+      border: none;
+      color: white;
+      cursor: pointer;
+    }
+
+    .car-detail {
+      background-color: white;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 3px 8px rgba(53, 122, 189, 0.2);
+      text-align: center;
+      max-width: 800px;
+      margin: 40px auto;
+    }
+
+    .car-detail h2 {
+      color: #357ABD;
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+
+    .car-detail img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+      margin: 20px 0;
+    }
+
+    .price {
+      color: #fed0d0;
+      font-weight: 600;
+      font-size: 1.5rem;
+      margin: 20px 0;
+    }
+
+    .book-btn {
+      background: linear-gradient(45deg, #4a90e2, #357ABD);
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      font-size: 1.2rem;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 20px;
+      transition: transform 0.3s ease;
+    }
+
+    .book-btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      overflow-y: auto;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    .modal.show {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal-content {
+      background-color: white;
+      padding: 30px;
+      border-radius: 10px;
+      width: 100%;
+      max-width: 500px;
+      text-align: center;
+      max-height: 90vh;
+      overflow-y: auto;
+      position: relative;
+      margin: auto;
+    }
+
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+      line-height: 1;
+    }
+
+    .close:hover {
+      color: #000;
+    }
+
+    .visit-info {
+      margin: 20px 0;
+      padding: 15px;
+      background-color: blur(255, 255, 255, 0.8);
+      border-radius: 8px;
+     
+    }
+
+    footer {
+      background-color: #357ABD;
+      color: white;
+      text-align: center;
+      padding: 40px 10px 20px 10px;
+      font-size: 1rem;
+      margin-top: 60px;
+    }
+
+    footer ul {
+      padding: 0;
+      list-style: none;
+    }
+
+    footer a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      header h1 {
+        font-size: 1.5rem;
+      }
+
+      .hamburger {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        gap: 12px;
+        margin-top: 10px;
+        width: 100%;
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      #themeToggle {
+        align-self: flex-end;
+        margin-top: 10px;
+      }
+
+      .car-detail {
+        padding: 20px;
+        margin: 20px 10px;
+      }
+
+      .modal-content {
+        width: 90%;
+        margin: 20% auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="logo-removebg-preview.png" alt="CarMandu Logo">
+    <h1>Welcome to CARMANDU</h1>
+  </header>
+
+  <nav>
+    <button class="hamburger" id="hamburgerBtn">☰</button>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact Us</a>
+      <a href="login.html">Login</a>
+      <button id="themeToggle">🌙</button>
+    </div>
+  </nav>
+
+  <div class="car-detail">
+    <h2>Audi</h2>
+    <img src="IMG_rhT9JWZuqKcz-removebg-preview.png" alt="Audi">
+    <p class="price">Price: $90,000</p>
+    <p>Discover the perfect blend of technology and luxury with this stunning Audi. Innovation meets elegance.</p>
+    <button class="book-btn" onclick="openModal()">Book an Appointment</button>
+  </div>
+
+  <!-- Modal -->
+  <div id="appointmentModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <h3>Book Your Appointment</h3>
+      
+      <form id="appointmentForm" onsubmit="submitForm(event)">
+        <div style="margin-bottom: 15px;">
+          <label for="customerName" style="display: block; margin-bottom: 5px; font-weight: 600;">Your Name:</label>
+          <input type="text" id="customerName" name="customerName" required style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px; box-sizing: border-box;">
+        </div>
+        
+        <div style="margin-bottom: 15px;">
+          <label for="customerEmail" style="display: block; margin-bottom: 5px; font-weight: 600;">Email:</label>
+          <input type="email" id="customerEmail" name="customerEmail" required style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px; box-sizing: border-box;">
+        </div>
+        
+        <div style="margin-bottom: 15px;">
+          <label for="customerPhone" style="display: block; margin-bottom: 5px; font-weight: 600;">Phone:</label>
+          <input type="tel" id="customerPhone" name="customerPhone" required style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px; box-sizing: border-box;">
+        </div>
+        
+        <div style="margin-bottom: 15px;">
+          <label for="preferredDate" style="display: block; margin-bottom: 5px; font-weight: 600;">Preferred Date:</label>
+          <input type="date" id="preferredDate" name="preferredDate" required style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px; box-sizing: border-box;">
+        </div>
+        
+        <div style="margin-bottom: 20px;">
+          <label for="message" style="display: block; margin-bottom: 5px; font-weight: 600;">Message (Optional):</label>
+          <textarea id="message" name="message" rows="3" style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px; box-sizing: border-box; resize: vertical;"></textarea>
+        </div>
+        
+        <button type="submit" style="background: linear-gradient(45deg, #4a90e2, #357ABD); color: white; border: none; padding: 12px 25px; border-radius: 6px; cursor: pointer; width: 100%; font-size: 1.1rem; margin-bottom: 20px;">Send</button>
+      </form>
+      
+      <div class="visit-info">
+        <h4>Visit us at:</h4>
+        <p><strong>Address:</strong> Lokanthali, Bhaktapur</p>
+        <p><strong>Phone:</strong> 987654321</p>
+        <p><strong>Hours:</strong> Mon-Fri: 9AM-7PM, Sat: 9AM-6PM, Sun: 12PM-5PM</p>
+        <p><strong>Email:</strong> appointments@carmandu.com</p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; max-width: 1000px; margin: 0 auto;">
+      <div style="flex: 1; min-width: 220px; text-align: left; margin-bottom: 20px;">
+        <strong style="font-size:1.3em;">Carmandu</strong><br>
+        <span style="font-size: 1em;">Your trusted car marketplace</span>
+        <p style="margin-top:18px; font-size:0.95em; color:#e3e9f7;">
+          Find your dream car, compare prices, and connect with verified sellers.
+        </p>
+      </div>
+      <div style="flex: 1; min-width: 220px; text-align: center; margin-bottom: 20px;">
+        <span style="font-weight:600; font-size:1.1em;">Quick Links</span>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="login.html">Login</a></li>
+        </ul>
+      </div>
+      <div style="flex: 1; min-width: 220px; text-align: center; margin-bottom: 20px;">
+        <span style="font-weight:600; font-size:1.1em;">Follow Us</span>
+        <div style="margin-top:15px; padding: auto; display: flex; justify-content: center; gap: 10px;">
+          <a href="#"><img src="fac-removebg-preview.png" style="height: 37px;"></a>
+          <a href="#"><img src="ins-removebg-preview.png" style="height: 37px;"></a>
+          <a href="#"><img src="X-removebg-preview.png" style="height: 37px;"></a>
+        </div>
+        <div style="margin-top:8px; font-size:0.95em; color:#e3e9f7;">
+          Facebook&nbsp;&nbsp; Instagram&nbsp;&nbsp; Twitter
+        </div>
+      </div>
+    </div>
+    <hr style="border: none; border-top: 1px solid #a8c0ff; margin: 25px 0 15px 0;">
+    <div style="font-size: 0.95em; color:#e3e9f7;">
+      &copy; 2025 Carmandu. All rights reserved. | <a href="privacy.html">Privacy Policy</a>
+    </div>
+  </footer>
+
+  <script>
+    const toggleBtn = document.getElementById('themeToggle');
+    const hamburgerBtn = document.getElementById('hamburgerBtn');
+    const navLinks = document.getElementById('navLinks');
+
+    // Theme
+    const currentTheme = localStorage.getItem('theme');
+    if (currentTheme === 'dark') {
+      document.body.classList.add('dark');
+      toggleBtn.textContent = '☀️';
+    }
+
+    toggleBtn.addEventListener('click', () => {
+      document.body.classList.toggle('dark');
+      const isDark = document.body.classList.contains('dark');
+      toggleBtn.textContent = isDark ? '☀️' : '🌙';
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    });
+
+    // Hamburger toggle
+    hamburgerBtn.addEventListener('click', () => {
+      navLinks.classList.toggle('show');
+    });
+
+    // Modal functions
+    function openModal() {
+      document.getElementById('appointmentModal').style.display = 'block';
+    }
+
+    function closeModal() {
+      document.getElementById('appointmentModal').style.display = 'none';
+    }
+
+    // Form submission function
+    function submitForm(event) {
+      event.preventDefault();
+      
+      const formData = new FormData(event.target);
+      const appointmentData = {
+        name: formData.get('customerName'),
+        email: formData.get('customerEmail'),
+        phone: formData.get('customerPhone'),
+        preferredDate: formData.get('preferredDate'),
+        message: formData.get('message'),
+        car: 'Audi',
+        dealershipAddress: '123 Luxury Car Boulevard, Automotive District, City 12345',
+        dealershipPhone: '(555) 123-CARS (2277)',
+        dealershipEmail: 'appointments@carmandu.com'
+      };
+      
+      // Here you would typically send the data to your server
+      console.log('Appointment Request:', appointmentData);
+      
+      // Show success message
+      alert('Appointment Booked!');
+      
+      // Reset message field to null and close modal
+      document.getElementById('message').value = '';
+      event.target.reset();
+      closeModal();
+    }
+
+    // Close modal when clicking outside
+    window.addEventListener('click', (event) => {
+      const modal = document.getElementById('appointmentModal');
+      if (event.target === modal) {
+        closeModal();
+      }
+    });
+  </script>
+</body>
+</html>
+
+

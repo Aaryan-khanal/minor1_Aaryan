@@ -123,12 +123,15 @@
 
     .cars {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      grid-template-columns: repeat(3, 1fr);
       gap: 30px;
       max-width: 1200px;
       margin: 40px auto;
       padding: 0 20px;
+      justify-content: center;
     }
+
+    
 
     .car {
       background-color: white;
@@ -221,9 +224,28 @@
         padding: 0 10px;
       }
 
+      /* Reset the 9th item styling on mobile */
+      .car:nth-child(9) {
+        grid-column: 1;
+        justify-self: stretch;
+      }
+
       footer > div {
         flex-direction: column !important;
         align-items: center !important;
+      }
+    }
+
+    @media (min-width: 769px) and (max-width: 1024px) {
+      .cars {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 800px;
+      }
+
+      /* On tablets, reset the 9th item to normal flow */
+      .car:nth-child(9) {
+        grid-column: auto;
+        justify-self: stretch;
       }
     }
   </style>
@@ -248,49 +270,49 @@
   <div class="cars">
     <!-- Car items (unchanged) -->
     <div class="car">
-      <h3>Ferrari</h3>
+      <h3><a href="ferrari.html" style="color:#357ABD; text-decoration:none;">Ferrari</a></h3>
       <p style="color:#fed0d0; font-weight:600;">Price: $300,000</p>
-      <img src="ferrari-removebg-preview.png" alt="Ferrari">
+      <a href="ferrari.html"><img src="ferrari-removebg-preview.png" alt="Ferrari"></a>
     </div>
     <div class="car">
-      <h3>Lamborghini</h3>
+      <h3><a href="lamborghini.html" style="color:#357ABD; text-decoration:none;">Lamborghini</a></h3>
       <p style="color:#fed0d0; font-weight:600;">Price: $350,000</p>
-      <img src="R-removebg-preview.png" alt="Lamborghini">
+      <a href="lamborghini.html"><img src="R-removebg-preview.png" alt="Lamborghini"></a>
     </div>
     <div class="car">
-      <h3>Mercedes</h3>
+      <h3><a href="mercedes.html" style="color:#357ABD; text-decoration:none;">Mercedes</a></h3>
       <p style="color:#fed0d0; font-weight:600;">Price: $120,000</p>
-      <img src="mercedes-cars-no-background-11663106613fha8tihh5c-removebg-preview.png" alt="Mercedes">
+      <a href="mercedes.html"><img src="mercedes-cars-no-background-11663106613fha8tihh5c-removebg-preview.png" alt="Mercedes"></a>
     </div>
     <div class="car">
-      <h3>Audi</h3>
+      <h3><a href="audi.html" style="color:#357ABD; text-decoration:none;">Audi</a></h3>
       <p style="color:#fed0d0; font-weight:600;">Price: $90,000</p>
-      <img src="IMG_rhT9JWZuqKcz-removebg-preview.png" alt="Audi">
+      <a href="audi.html"><img src="IMG_rhT9JWZuqKcz-removebg-preview.png" alt="Audi"></a>
     </div>
     <div class="car">
-      <h3>BMW</h3>
+      <h3><a href="bmw.html" style="color:#357ABD; text-decoration:none;">BMW</a></h3>
       <p style="color:#fed0d0; font-weight:600;">Price: $95,000</p>
-      <img src="bmw-removebg-preview.png" alt="BMW">
+      <a href="bmw.html"><img src="bmw-removebg-preview.png" alt="BMW"></a>
     </div>
     <div class="car">
-      <h3>Bugatti</h3>
+      <h3><a href="bugatti.html" style="color:#357ABD; text-decoration:none;">Bugatti</a></h3>
       <p style="color:#fed0d0; font-weight:600;">Price: $1,500,000</p>
-      <img src="b-removebg-preview.png" alt="Bugatti">
+      <a href="bugatti.html"><img src="b-removebg-preview.png" alt="Bugatti"></a>
     </div>
     <div class="car">
-      <h3>Tesla</h3>
+      <h3><a href="tesla.html" style="color:#357ABD; text-decoration:none;">Tesla</a></h3>
       <p style="color:#fed0d0; font-weight:600;">Price: $80,000</p>
-      <img src="tesla-logo-png-transparent-background-photoshop-11661594428dwyn6rjlsp-removebg-preview.png" alt="Tesla">
+      <a href="tesla.html"><img src="tesla-logo-png-transparent-background-photoshop-11661594428dwyn6rjlsp-removebg-preview.png" alt="Tesla"></a>
     </div>
     <div class="car">
-      <h3>Porsche</h3>
+      <h3><a href="porsche.html" style="color:#357ABD; text-decoration:none;">Porsche</a></h3>
       <p style="color:#fed0d0; font-weight:600;">Price: $140,000</p>
-      <img src="p-removebg-preview.png" alt="Porsche">
+      <a href="porsche.html"><img src="p-removebg-preview.png" alt="Porsche"></a>
     </div>
     <div class="car">
-      <h3>Rolls Royce</h3>
+      <h3><a href="rollsroyce.html" style="color:#357ABD; text-decoration:none;">Rolls Royce</a></h3>
       <p style="color:#fed0d0; font-weight:600;">Price: $450,000</p>
-      <img src="rr-removebg-preview.png" alt="Rolls Royce">
+      <a href="rollsroyce.html"><img src="rr-removebg-preview.png" alt="Rolls Royce"></a>
     </div>
   </div>
 
